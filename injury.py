@@ -26,7 +26,7 @@ X_scaled = scaler.fit_transform(X)
 # Split the data into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2, random_state=42)
 
-# Initialize and train the Random Forest Classifier
+# Random Forest Classifier
 rf_model = RandomForestClassifier(
     n_estimators=250,        
     max_depth=12,            
@@ -59,7 +59,7 @@ indices = np.argsort(feature_importances)[::-1]
 
 # Extracting feature importances
 importances = rf_model.feature_importances_
-features = X.columns  # Assuming X is your features dataframe
+features = X.columns 
 
 # dataframe of features and their corresponding importance
 feature_importance_df = pd.DataFrame({
